@@ -1,0 +1,31 @@
+version: "3.3"
+services:
+  bonjour:
+    extends:
+      file: bonjour/docker-compose.yml
+      service: challenge
+    networks: 
+      - network_fibo
+  you-only-have-one-chance:
+    extends:
+      file: you-only-have-one-chance/docker-compose.yml
+      service: challenge
+    networks: 
+      - network_fibo
+  duper-super-safe-safe:
+    extends:
+      file: duper-super-safe-safe/docker-compose.yml
+      service: challenge
+    networks: 
+      - network_fibo
+  rolls-royce:
+    extends:
+      file: rolls-royce/docker-compose.yml
+      service: challenge
+    networks: 
+      - network_fibo
+
+networks:
+  network_fibo:
+    name: network_fibo_default
+    external: true
